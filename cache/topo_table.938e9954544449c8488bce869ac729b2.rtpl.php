@@ -30,7 +30,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/sistema/admin/" class="nav-link">Início</a>
+        <a href="/sistema/" class="nav-link">Início</a>
       </li>
       
     </ul>
@@ -49,7 +49,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/sistema/admin" class="brand-link elevation-4">
+    <a href="/sistema/" class="brand-link elevation-4">
       <img src="/sistema/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">WPL Estudos</span>
     </a>
@@ -93,19 +93,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/sistema/admin/materias/insert" class="nav-link">
+                <a href="/sistema/materias/insert" class="nav-link">
                     <i class="fas fa-plus"></i>
                     <p> &nbsp; Inserir matéria</p>
                 </a>
               </li> 
             <li class="nav-item">
-                <a href="/sistema/admin/atividades/insert" class="nav-link">
+                <a href="/sistema/atividades/insert" class="nav-link">
                     <i class="fas fa-plus"></i>
                     <p> &nbsp; Inserir atividade</p>
                 </a>
                 </li>
               <li class="nav-item">
-                <a href="/sistema/admin/atividades" class="nav-link">
+                <a href="/sistema/atividades" class="nav-link">
                   <i class="fas fa-list"></i>
                   <p>&nbsp; Listar atividades</p>
                 </a>

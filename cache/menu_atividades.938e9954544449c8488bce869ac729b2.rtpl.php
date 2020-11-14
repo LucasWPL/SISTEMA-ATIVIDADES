@@ -1,8 +1,8 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?>  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+<?php if(!class_exists('Rain\Tpl')){exit;}?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
+
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Atividades</h1>
@@ -18,6 +18,7 @@
     </section>
 
     <!-- Main content -->
+
     <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -62,24 +63,24 @@
                     <td>
 
                         <?php if( $value1["ativ_conclusao"] == 'SIM' ){ ?>
-                          <a class="btn btn-success btn-sm" href="/sistema/admin/atividades/desconcluir/<?php echo htmlspecialchars( $value1["idatividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente mudar o status para não concluída?')">
+                          <a class="btn btn-success btn-sm" href="/sistema/atividades/desconcluir/<?php echo htmlspecialchars( $value1["idatividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente mudar o status para não concluída?')">
                             <i class="fas fa-sync-alt">
                             </i>
                             
                         </a>
                           <?php }else{ ?>
-                          <a class="btn btn-success btn-sm" href="/sistema/admin/atividades/concluir/<?php echo htmlspecialchars( $value1["idatividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente mudar o status para concluída?')">
+                          <a class="btn btn-success btn-sm" href="/sistema/atividades/concluir/<?php echo htmlspecialchars( $value1["idatividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente mudar o status para concluída?')">
                             <i class="fas fa-check">
                             </i>
                             
                         </a>
                         <?php } ?>
-                        <a class="btn btn-info btn-sm" href="/sistema/admin/atividades/update/<?php echo htmlspecialchars( $value1["idatividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                        <a class="btn btn-info btn-sm" href="/sistema/atividades/update/<?php echo htmlspecialchars( $value1["idatividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                             <i class="fas fa-pencil-alt">
                             </i>
                             
                         </a>
-                        <a class="btn btn-danger btn-sm" href="/sistema/admin/atividades/delete/<?php echo htmlspecialchars( $value1["idatividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente excluir esta atividade?')">
+                        <a class="btn btn-danger btn-sm" href="/sistema/atividades/delete/<?php echo htmlspecialchars( $value1["idatividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente excluir esta atividade?')">
                             <i class="fas fa-trash">
                             </i>
                             

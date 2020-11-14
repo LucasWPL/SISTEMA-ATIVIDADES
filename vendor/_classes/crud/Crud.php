@@ -5,17 +5,17 @@ namespace WPL;
     class Crud 
     {
         private $conn;
+        const HOST = "127.0.0.1";
+        const USER = "root";
+        const PASS = "";
+        const DB = "bd_sistema";
       
-        public function connect()
+        public function connect(){}
+        public function __construct()
         {
-            DEFINE("HOST", "127.0.0.1");
-            DEFINE("USER", "root");
-            DEFINE("PASS", "");
-            DEFINE("DB", "bd_sistema");
-
             try
             {
-                $this ->conn = new \PDO ( 'mysql:host=' . HOST . ';dbname=' . DB, USER, PASS);
+                $this ->conn = new \PDO ( 'mysql:host=' . Crud::HOST . ';dbname=' . Crud::DB, Crud::USER, Crud::PASS);
                 $this-> conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
        
             }

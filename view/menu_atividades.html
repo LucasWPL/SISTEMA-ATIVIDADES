@@ -1,8 +1,8 @@
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
+
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Atividades</h1>
@@ -18,6 +18,7 @@
     </section>
 
     <!-- Main content -->
+
     <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -62,24 +63,24 @@
                     <td>
 
                         {if="$value.ativ_conclusao == 'SIM'"}
-                          <a class="btn btn-success btn-sm" href="/sistema/admin/atividades/desconcluir/{$value.idatividade}" onclick="return confirm('Deseja realmente mudar o status para não concluída?')">
+                          <a class="btn btn-success btn-sm" href="/sistema/atividades/desconcluir/{$value.idatividade}" onclick="return confirm('Deseja realmente mudar o status para não concluída?')">
                             <i class="fas fa-sync-alt">
                             </i>
                             
                         </a>
                           {else}
-                          <a class="btn btn-success btn-sm" href="/sistema/admin/atividades/concluir/{$value.idatividade}" onclick="return confirm('Deseja realmente mudar o status para concluída?')">
+                          <a class="btn btn-success btn-sm" href="/sistema/atividades/concluir/{$value.idatividade}" onclick="return confirm('Deseja realmente mudar o status para concluída?')">
                             <i class="fas fa-check">
                             </i>
                             
                         </a>
                         {/if}
-                        <a class="btn btn-info btn-sm" href="/sistema/admin/atividades/update/{$value.idatividade}">
+                        <a class="btn btn-info btn-sm" href="/sistema/atividades/update/{$value.idatividade}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             
                         </a>
-                        <a class="btn btn-danger btn-sm" href="/sistema/admin/atividades/delete/{$value.idatividade}" onclick="return confirm('Deseja realmente excluir esta atividade?')">
+                        <a class="btn btn-danger btn-sm" href="/sistema/atividades/delete/{$value.idatividade}" onclick="return confirm('Deseja realmente excluir esta atividade?')">
                             <i class="fas fa-trash">
                             </i>
                             

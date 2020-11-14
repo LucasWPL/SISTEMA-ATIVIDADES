@@ -1,5 +1,4 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?>    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -9,7 +8,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/sistema/admin">Página inicial</a></li>
-              <li class="breadcrumb-item"><a href="/sistema/admin/atividades">Atividades</a></li>
+              <li class="breadcrumb-item"><a href="/sistema/atividades">Atividades</a></li>
               <li class="breadcrumb-item active">Editar atividade</li>
             </ol>
           </div>

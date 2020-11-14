@@ -2,6 +2,8 @@
 
 require_once("vendor/autoload.php");
 require_once("vendor/_classes/crud/Crud.php");
+require_once("vendor/_classes/crud/GlobalClass.php");
+require_once("vendor/_classes/crud/Page.php");
 
 use Rain\Tpl;
 use WPL\Crud;
