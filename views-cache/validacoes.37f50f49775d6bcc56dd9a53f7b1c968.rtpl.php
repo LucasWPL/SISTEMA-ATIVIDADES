@@ -36,6 +36,42 @@
     </div>
     <?php } ?>
 
+    <?php if( isset($_GET['insertMat']) and $_GET['insertMat'] == 1 ){ ?>
+    <div class="col-md-12">
+      <div class="card bg-success">
+        <div class="card-header">
+          <h3 class="card-title">Matéria inserida com sucesso!</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+            </button>
+          </div>
+          <!-- /.card-tools -->
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    <?php } ?>
+
+    <?php if( isset($_GET['insertMat']) and $_GET['insertMat'] != 1 ){ ?>
+    <div class="col-md-12">
+      <div class="card bg-danger">
+        <div class="card-header">
+          <h3 class="card-title">Ocorreu um erro na inserção da Matéria!</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+            </button>
+          </div>
+          <!-- /.card-tools -->
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    <?php } ?>
+
     <?php if( isset($_GET['stta']) and $_GET['stta'] == 1 ){ ?>
     <div class="col-md-12">
       <div class="card bg-success">

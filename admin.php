@@ -15,7 +15,30 @@ $config = array(
 
 Tpl::configure($config);
 
-// INÍCIO ADMIN
+// INÍCIO SISTEMA
+
+$app->get('/modal/inserirMateria', function () {
+
+    $crud = new Crud();
+    $resposta = $crud -> insertMaterias($_GET);
+    
+    $tpl = new Page();
+    $tpl -> headerLocation("insertMat", $resposta);
+});
+
+$app->post('/modal/inserirMateria', function () {
+
+    $materia = filter_input(INPUT_POST, 'materia', FILTER_SANITIZE_STRING);
+
+    $crud = new Crud();
+    $resposta = $crud -> insertMateriaModal($materia);
+
+    if($resposta){
+        echo true;
+    }else{
+        echo false;
+    }
+});
 
 $app->get('/', function () {
 

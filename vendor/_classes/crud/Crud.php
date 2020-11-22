@@ -52,10 +52,20 @@ namespace WPL;
             return $res;
         }
 
-         public function insertMaterias($post){
+        public function insertMaterias($post){
             
             
             $stmt = $this-> conn-> prepare("INSERT INTO tb_materias (mat_descricao) VALUES ('{$post['mat_descricao']}')");
+            
+            $res = $stmt-> execute();
+            
+            return $res;
+        }
+
+        public function insertMateriaModal($mat){
+            
+            
+            $stmt = $this-> conn-> prepare("INSERT INTO tb_materias (mat_descricao) VALUES ('{$mat}')");
             
             $res = $stmt-> execute();
             
