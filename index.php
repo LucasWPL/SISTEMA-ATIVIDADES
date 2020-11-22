@@ -21,13 +21,20 @@ $app-> config('debug', true);
 require_once("admin.php");
 
 $app->run();
- 
+
 function verifyLogin()
 {
 	if(!isset($_COOKIE['LOGIN'])){
 		header("Location: /admin/login");
 		exit;
 	}
+}
+
+function converterBR($value)
+{
+	$value = date('d/m/Y', strtotime($value));
+
+	return $value;
 }
 
 ?>

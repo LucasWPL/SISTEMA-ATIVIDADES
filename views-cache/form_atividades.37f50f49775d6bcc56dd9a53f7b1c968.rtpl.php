@@ -1,15 +1,15 @@
-    <!-- Content Header (Page header) -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?>    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Editar atividade</h1>
+            <h1>Inserir atividade</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/sistema/admin">Página inicial</a></li>
               <li class="breadcrumb-item"><a href="/sistema/atividades">Atividades</a></li>
-              <li class="breadcrumb-item active">Editar atividade</li>
+              <li class="breadcrumb-item active">Inserir atividade</li>
             </ol>
           </div>
         </div>
@@ -37,10 +37,10 @@
                 <div class="form-group">
                   <label>Matéria</label>
                   <select class="form-control select2" style="width: 100%;" name="ativ_materia">
-                    <option selected="selected" value="{$atividade.ativ_materia}">{$atividade.ativ_materia}</option>
-                    <option>Matemática</option>
-                    <option>História</option>
-                    <option>Português</option>
+                    <?php $counter1=-1;  if( isset($materias) && ( is_array($materias) || $materias instanceof Traversable ) && sizeof($materias) ) foreach( $materias as $key1 => $value1 ){ $counter1++; ?>
+                    <option value="<?php echo htmlspecialchars( $value1["mat_descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["mat_descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                    <?php } ?>
+                    
                   </select>
                 </div>
               </div>
@@ -53,8 +53,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                     </div>
-                    <input type="date" class="form-control" name="ativ_vencimento" value="{$atividade.ativ_vencimento}">
-                    <input type="hidden" class="form-control" name="idatividade" value="{$atividade.idatividade}">
+                    <input type="date" class="form-control" name="ativ_vencimento">
                   </div>
                 </div>
               </div>
@@ -64,14 +63,14 @@
               <div class="col-12 col-sm-12">
                 <div class="form-group">
                   <label>Descrição</label>
-                  <input type="text" style="width: 100%; height: 50px;"class="form-control" name="ativ_descricao" value="{$atividade.ativ_descricao}">
+                  <textarea class="form-control" rows="3" placeholder="Descrição..." name="ativ_descricao"></textarea>
                 </div>
               </div>
             </div>
           </div>
           <div class="card-footer">
-            <button type="reset" class="btn btn-default" >Limpar edição</button>
-            <button type="submit" class="btn btn-info float-right">Editar</button>
+            <button type="reset" class="btn btn-default" href="/sistema/atividades">Limpar</button>
+            <button type="submit" class="btn btn-info float-right">Enviar</button>
           </div>
         </div>
       </form>

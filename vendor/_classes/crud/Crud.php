@@ -11,6 +11,7 @@ namespace WPL;
         const DB = "bd_sistema";
       
         public function connect(){}
+        
         public function __construct()
         {
             try

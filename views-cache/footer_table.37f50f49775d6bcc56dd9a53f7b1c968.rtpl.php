@@ -1,8 +1,8 @@
-<footer class="main-footer">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><footer class="main-footer">
     <strong>Copyright &copy; 2014-2020 <a href="#">WPL Estudos</a>.</strong>
     Desenvolvido por Lucas WPL.
     <div class="float-right d-none d-sm-inline-block"> 
-      <b>Versão</b> {$versao}
+      <b>Versão</b> <?php echo htmlspecialchars( $versao, ENT_COMPAT, 'UTF-8', FALSE ); ?>
     </div>
   </footer>
 

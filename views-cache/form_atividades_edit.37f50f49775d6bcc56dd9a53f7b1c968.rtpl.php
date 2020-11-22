@@ -1,4 +1,4 @@
-    <!-- Content Header (Page header) -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?>    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -37,7 +37,7 @@
                 <div class="form-group">
                   <label>Matéria</label>
                   <select class="form-control select2" style="width: 100%;" name="ativ_materia">
-                    <option selected="selected" value="{$atividade.ativ_materia}">{$atividade.ativ_materia}</option>
+                    <option selected="selected" value="<?php echo htmlspecialchars( $atividade["ativ_materia"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $atividade["ativ_materia"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
                     <option>Matemática</option>
                     <option>História</option>
                     <option>Português</option>
@@ -53,8 +53,8 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                     </div>
-                    <input type="date" class="form-control" name="ativ_vencimento" value="{$atividade.ativ_vencimento}">
-                    <input type="hidden" class="form-control" name="idatividade" value="{$atividade.idatividade}">
+                    <input type="date" class="form-control" name="ativ_vencimento" value="<?php echo htmlspecialchars( $atividade["ativ_vencimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                    <input type="hidden" class="form-control" name="idatividade" value="<?php echo htmlspecialchars( $atividade["idatividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                   </div>
                 </div>
               </div>
@@ -64,7 +64,7 @@
               <div class="col-12 col-sm-12">
                 <div class="form-group">
                   <label>Descrição</label>
-                  <input type="text" style="width: 100%; height: 50px;"class="form-control" name="ativ_descricao" value="{$atividade.ativ_descricao}">
+                  <input type="text" style="width: 100%; height: 50px;"class="form-control" name="ativ_descricao" value="<?php echo htmlspecialchars( $atividade["ativ_descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
               </div>
             </div>

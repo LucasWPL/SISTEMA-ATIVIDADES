@@ -49,11 +49,21 @@
                     <td><?php echo htmlspecialchars( $value1["ativ_descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                     <td><?php echo converterBR($value1["ativ_vencimento"]); ?></td>
 
-                    <?php if( $value1["ativ_conclusao"] == 'SIM' ){ ?>
-                      <td>Concluída</td>
+                    <?php if( $value1["ativ_conclusao"] != '' ){ ?>
+                        <td>Concluída</td>    
                       <?php }else{ ?>
-                      <td>Não concluída</td>
+                        <?php if( $value1["ativ_vencimento"] <= $dia ){ ?>
+                            <?php if( $value1["ativ_vencimento"] == $dia ){ ?>
+                              <td>À vencer hoje</td>
+                            <?php }else{ ?>
+                              <td>Vencida</td>
+                            <?php } ?>
+                          <?php }else{ ?>
+                            <td>Não concluída</td>
+                        <?php } ?>
                     <?php } ?>
+
+
                     <?php if( $value1["ativ_conclusao"] != '' ){ ?>
                       <td><?php echo converterBR($value1["ativ_conclusao_data"]); ?> ás <?php echo htmlspecialchars( $value1["ativ_conclusao_hora"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                       <?php }else{ ?>

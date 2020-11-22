@@ -37,6 +37,8 @@
             </div>
             <!-- /.info-box -->
           </div>
+          <?php if( $atividadeshoje > 0 ){ ?>
+
           <div class="col-3 col-sm-6 col-md-3">
             <div class="info-box">
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-exclamation-triangle"></i></span>
@@ -52,6 +54,8 @@
             </div>
             <!-- /.info-box -->
           </div>
+          <?php } ?>
+
           <!-- /.col -->
         </div>
         <div class="row">
@@ -71,6 +75,8 @@
           </div>
           <!-- ./col -->
 
+          <?php if( $atividadeshoje > 0 ){ ?>
+
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-danger">
@@ -85,6 +91,8 @@
               <a href="/sistema/atividades/hoje" class="small-box-footer">Acessar o menu <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+          <?php } ?>
+
           <!-- ./col -->
         </div>
         <!-- /.row -->

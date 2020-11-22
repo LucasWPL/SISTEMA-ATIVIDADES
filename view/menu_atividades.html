@@ -47,15 +47,25 @@
                     <td>{$value.idatividade}</td>
                     <td>{$value.ativ_materia}</td>
                     <td>{$value.ativ_descricao}</td>
-                    <td>{$value.ativ_vencimento}</td>
+                    <td>{function="converterBR($value.ativ_vencimento)"}</td>
 
-                    {if="$value.ativ_conclusao == 'SIM'"}
-                      <td>Concluída</td>
-                      {else}
-                      <td>Não concluída</td>
-                    {/if}
                     {if="$value.ativ_conclusao != ''"}
-                      <td>{$value.ativ_conclusao_data} ás {$value.ativ_conclusao_hora}</td>
+                        <td>Concluída</td>    
+                      {else}
+                        {if="$value.ativ_vencimento <= $dia"}
+                            {if="$value.ativ_vencimento == $dia"}
+                              <td>À vencer hoje</td>
+                            {else}
+                              <td>Vencida</td>
+                            {/if}
+                          {else}
+                            <td>Não concluída</td>
+                        {/if}
+                    {/if}
+
+
+                    {if="$value.ativ_conclusao != ''"}
+                      <td>{function="converterBR($value.ativ_conclusao_data)"} ás {$value.ativ_conclusao_hora}</td>
                       {else}
                       <td></td>
                     {/if}
