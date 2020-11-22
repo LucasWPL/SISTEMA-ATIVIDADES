@@ -17,6 +17,18 @@ Tpl::configure($config);
 
 // INÍCIO SISTEMA
 
+$app->post('/jquery/getMaterias', function () {
+
+    $crud = new Crud();
+    $materias = $crud-> select("SELECT mat_descricao FROM tb_materias");
+    $dados = "";
+    foreach ($materias as $value) {
+        $dados .= "<option value='{$value['mat_descricao']}'> {$value['mat_descricao']}</option>";
+    }
+    echo $dados;
+});
+
+
 $app->get('/modal/inserirMateria', function () {
 
     $crud = new Crud();

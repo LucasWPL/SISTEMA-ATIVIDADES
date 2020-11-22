@@ -3,8 +3,8 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Inserir atividade</h1>
+          <div class="col-sm-6" id="divTeste">
+            <h1 id="teste">Inserir atividade</h1>
             
           </div>
           <div class="col-sm-6">
@@ -42,7 +42,7 @@
                       <i class="fas fa-plus"> Incluir nova matéria</i>
                     </a>
                   </label>
-                  <select class="form-control select2" style="width: 100%;" name="ativ_materia">
+                  <select class="form-control select2" style="width: 100%;" name="ativ_materia" id="ativ_materia">
                     <?php $counter1=-1;  if( isset($materias) && ( is_array($materias) || $materias instanceof Traversable ) && sizeof($materias) ) foreach( $materias as $key1 => $value1 ){ $counter1++; ?>
                     <option value="<?php echo htmlspecialchars( $value1["mat_descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["mat_descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
                     <?php } ?>
@@ -93,6 +93,37 @@
     $("#modalInserirMateria").modal();
   });
 
+  $("#ativ_materia").change(function(event){
+    $("#ativ_materia").empty();
+
+    event.preventDefault();
+    var dados = "";
+
+    $.post("/sistema/jquery/getMaterias", dados, function(retorna){
+      
+        
+        $("#ativ_materia").html(retorna);
+      
+      
+    });
+
+  });
+
+  function atualizaMaterias(){
+    $("#ativ_materia").empty();
+
+    event.preventDefault();
+    var dados = "";
+
+    $.post("/sistema/jquery/getMaterias", dados, function(retorna){
+      
+        
+        $("#ativ_materia").html(retorna);
+      
+      
+    });
+  }
+
   $(document).ready(function(){
     $('#insertForm').on('submit', function(event){
       event.preventDefault();
@@ -102,11 +133,13 @@
         
         if(retorna){
           
-          $("#msg").html('<div class="alert alert-success" role="alert">Usuário cadastrado com sucesso!</div>');
+          $("#msg").html('<div class="alert alert-success" role="alert">Matéria cadastrada com sucesso!</div>');
           
           $('#insertForm')[0].reset();
           
           $('#modalInserirMateria').modal('hide');
+
+          atualizaMaterias();
         
         }else{
 
